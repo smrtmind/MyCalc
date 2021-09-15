@@ -1,0 +1,16 @@
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.exe
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.deps.json
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.runtimeconfig.json
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.runtimeconfig.dev.json
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.dll
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\ref\Calculator.dll
+D:\OneDrive\Code\C#\MyProjects\Calculator\bin\Release\net5.0\Calculator.pdb
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.AssemblyInfoInputs.cache
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.AssemblyInfo.cs
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.csproj.CoreCompileInputs.cache
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.dll
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\ref\Calculator.dll
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.pdb
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.genruntimeconfig.cache
+D:\OneDrive\Code\C#\MyProjects\Calculator\obj\Release\net5.0\Calculator.csproj.AssemblyReference.cache
