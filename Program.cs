@@ -6,9 +6,9 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            string keyboardInput = string.Empty;
+            string input = string.Empty;
 
-            while (keyboardInput.ToLower() != "y")
+            while (input.ToLower() != "y")
             {
                 byte menuChoice;
                 double result = 0;
@@ -21,8 +21,8 @@ namespace Calculator
                     Print.MainMenuOptions();
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    keyboardInput = Console.ReadLine();
-                    byte.TryParse(keyboardInput, out menuChoice);
+                    input = Console.ReadLine();
+                    byte.TryParse(input, out menuChoice);
                     Console.ResetColor();
 
                     //calculator
@@ -42,10 +42,10 @@ namespace Calculator
                                 do
                                 {
                                     Print.Text("input:\t\t");
-                                    keyboardInput = Console.ReadLine();
-                                    numberIsFound = double.TryParse(keyboardInput, out number);
+                                    input = Console.ReadLine();
+                                    numberIsFound = double.TryParse(input, out number);
 
-                                    if (keyboardInput == "=")
+                                    if (input == "=")
                                     {
                                         Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
                                         break;
@@ -58,108 +58,21 @@ namespace Calculator
 
                             else Print.Text($"\t\t{result}\n", ConsoleColor.Green);
 
-                            while (keyboardInput != "=")
+                            while (input != "=")
                             {
                                 Print.Text("+  -  *  /\t", ConsoleColor.DarkYellow);
                                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                keyboardInput = Console.ReadLine();
+                                input = Console.ReadLine();
                                 Console.ResetColor();
 
-                                switch (keyboardInput)
-                                {
-                                    case "+":
-                                        do
-                                        {
-                                            Print.Text("input:\t\t");
-                                            keyboardInput = Console.ReadLine();
-                                            numberIsFound = double.TryParse(keyboardInput, out number);
+                                if (input == "+" || input == "-" || input == "*" || input == "/")
+                                    PerformOperation(input);
 
-                                            if (keyboardInput == "=")
-                                            {
-                                                Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                                Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
-                                                break;
-                                            }
+                                else if (input == "=")
+                                    Print.Text($"\nresult:\t\t{result}\n", ConsoleColor.Green);
 
-                                            else result += number;
-                                        }
-                                        while (!numberIsFound);
-
-                                        break;
-
-                                    case "-":
-                                        do
-                                        {
-                                            Print.Text("input:\t\t");
-                                            keyboardInput = Console.ReadLine();
-                                            numberIsFound = double.TryParse(keyboardInput, out number);
-
-                                            if (keyboardInput == "=")
-                                            {
-                                                Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                                Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
-                                                break;
-                                            }
-
-                                            else result -= number;
-                                        }
-                                        while (!numberIsFound);
-
-                                        break;
-
-                                    case "*":
-                                        do
-                                        {
-                                            Print.Text("input:\t\t");
-                                            keyboardInput = Console.ReadLine();
-                                            numberIsFound = double.TryParse(keyboardInput, out number);
-
-                                            if (keyboardInput == "=")
-                                            {
-                                                Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                                Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
-                                                break;
-                                            }
-
-                                            else result *= number;
-                                        }
-                                        while (!numberIsFound);
-
-                                        break;
-
-                                    case "/":
-                                        do
-                                        {
-                                            Print.Text("input:\t\t");
-                                            keyboardInput = Console.ReadLine();
-                                            numberIsFound = double.TryParse(keyboardInput, out number);
-
-                                            if (keyboardInput == "=")
-                                            {
-                                                Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                                Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
-                                                break;
-                                            }
-
-                                            else if (number == 0)
-                                            {
-                                                Print.Text("division by zero is not possible\a".PadLeft(49, ' ') + "\n", ConsoleColor.Red);
-                                            }
-
-                                            else result /= number;
-                                        }
-                                        while (!numberIsFound || number == 0);
-
-                                        break;
-
-                                    case "=":
-                                        Print.Text($"\nresult:\t\t{result}\n", ConsoleColor.Green);
-                                        break;
-
-                                    default:
-                                        Print.Text("unknown operator\a".PadLeft(33, ' ') + "\n", ConsoleColor.Red);
-                                        break;
-                                }
+                                else
+                                    Print.Text("unknown operator\a".PadLeft(33, ' ') + "\n", ConsoleColor.Red);
                             }
 
                             do
@@ -171,19 +84,19 @@ namespace Calculator
                                 Print.Text(": ");
 
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                keyboardInput = Console.ReadLine();
+                                input = Console.ReadLine();
                                 Console.ResetColor();
 
-                                if (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n")
+                                if (input.ToLower() != "y" && input.ToLower() != "n")
                                 {
                                     Print.Text("y - continue\a".PadLeft(56, ' ') + "\n", ConsoleColor.Red);
                                     Print.Text("n - exit\a".PadLeft(52, ' '), ConsoleColor.Red);
                                     continue;
                                 }
                             }
-                            while (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n");
+                            while (input.ToLower() != "y" && input.ToLower() != "n");
 
-                            if (keyboardInput.ToLower() == "y")
+                            if (input.ToLower() == "y")
                             {
                                 do
                                 {
@@ -194,28 +107,61 @@ namespace Calculator
                                     Print.Text(": ");
 
                                     Console.ForegroundColor = ConsoleColor.Green;
-                                    keyboardInput = Console.ReadLine();
+                                    input = Console.ReadLine();
                                     Console.ResetColor();
 
-                                    if (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n")
+                                    if (input.ToLower() != "y" && input.ToLower() != "n")
                                     {
                                         Print.Text($"\t\t\t\t\t\t    y - start from {result}\a\n", ConsoleColor.Red);
                                         Print.Text("n - start from 0\a".PadLeft(69, ' '), ConsoleColor.Red);
                                         continue;
                                     }
                                 }
-                                while (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n");
+                                while (input.ToLower() != "y" && input.ToLower() != "n");
 
-                                if (keyboardInput.ToLower() == "y") continue;
+                                if (input.ToLower() == "y") continue;
 
-                                if (keyboardInput.ToLower() == "n")
+                                if (input.ToLower() == "n")
                                 {
                                     result = 0;
                                     continue;
                                 }
                             }
 
-                            if (keyboardInput.ToLower() == "n") break;
+                            if (input.ToLower() == "n") break;
+                        }
+
+                        void PerformOperation(string mathOperator)
+                        {
+                            do
+                            {
+                                Print.Text("input:\t\t");
+                                input = Console.ReadLine();
+                                numberIsFound = double.TryParse(input, out number);
+
+                                if (input == "=")
+                                {
+                                    Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
+                                    Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
+                                    break;
+                                }
+
+                                else
+                                {
+                                    if (mathOperator == "+") result += number;
+                                    if (mathOperator == "-") result -= number;
+                                    if (mathOperator == "*") result *= number;
+                                    if (mathOperator == "/")
+                                    {
+                                        if (number == 0)
+                                            Print.Text("division by zero is not possible\a".PadLeft(49, ' ') + "\n", ConsoleColor.Red);
+
+                                        else result /= number;
+                                    }
+                                        
+                                }
+                            }
+                            while (!numberIsFound || number == 0 && mathOperator == "/");
                         }
                     }
 
@@ -274,11 +220,11 @@ namespace Calculator
                             Print.PercentageOptions();
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            keyboardInput = Console.ReadLine();
-                            byte.TryParse(keyboardInput, out menuChoice);
+                            input = Console.ReadLine();
+                            byte.TryParse(input, out menuChoice);
                             Console.ResetColor();
 
-                            if (keyboardInput.ToLower() == "<") break;
+                            if (input.ToLower() == "<") break;
 
                             switch (menuChoice)
                             {
@@ -380,12 +326,12 @@ namespace Calculator
                         Print.Text($"\nresult:\t\t{Math.Tanh(number)}\n", ConsoleColor.Green);
                     }
 
-                    else if (keyboardInput.ToLower() == "<") break;
+                    else if (input.ToLower() == "<") break;
                 }
                 while (menuChoice <= 0 || menuChoice > 13);
                 
                 //stop the program and exit
-                if (keyboardInput.ToLower() == "<")
+                if (input.ToLower() == "<")
                 {
                     //print the animation
                     Print.ProgramShutDown();
@@ -401,19 +347,19 @@ namespace Calculator
                     Print.Text(": ");
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    keyboardInput = Console.ReadLine();
+                    input = Console.ReadLine();
                     Console.ResetColor();
 
-                    if (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n")
+                    if (input.ToLower() != "y" && input.ToLower() != "n")
                     {
                         Print.Text("y - exit\a".PadLeft(39, ' ') + "\n", ConsoleColor.Red);
                         Print.Text("n - return to main menu\a".PadLeft(54, ' '), ConsoleColor.Red);
                         continue;
                     }
                 }
-                while (keyboardInput.ToLower() != "y" && keyboardInput.ToLower() != "n");
+                while (input.ToLower() != "y" && input.ToLower() != "n");
 
-                if (keyboardInput.ToLower() == "y") Print.ProgramShutDown();
+                if (input.ToLower() == "y") Print.ProgramShutDown();
             }
         }      
         
