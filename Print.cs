@@ -2,7 +2,7 @@
 using System.Text;
 using System.Threading;
 
-namespace Calculator
+namespace MyCalc
 {
     public class Print
     {
@@ -67,7 +67,7 @@ namespace Calculator
         {
             Console.Clear();
 
-            Text("interest operations\n\n", ConsoleColor.Cyan);
+            Text("Percentage operations\n\n", ConsoleColor.Cyan);
             Text("choose the type of operation:\n\n", ConsoleColor.Green);
 
             Text("[1]".PadLeft(19, ' '), ConsoleColor.Green);

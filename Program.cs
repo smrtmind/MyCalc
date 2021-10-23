@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Calculator
+namespace MyCalc
 {
     class Program
     {
@@ -13,7 +13,6 @@ namespace Calculator
                 byte menuChoice;
                 double result = 0;
                 double number, number1, percent, power;
-                bool numberIsFound;
 
                 do
                 {
@@ -26,144 +25,7 @@ namespace Calculator
                     Console.ResetColor();
 
                     //calculator
-                    if (menuChoice == 1)
-                    {
-                        while (true)
-                        {
-                            Console.Clear();
-                            //method print is using all over this code
-                            //it gives an opportunity to change color of the text or make it slow on printing for each string
-                            //and do this with in one string of code
-                            Print.Text("\tcalculator\n", ConsoleColor.Cyan);
-                            Print.Text("\nuse [=] to get a result or\ninterrupt the current input\n\n", ConsoleColor.Blue);
-
-                            if (result == 0)
-                            {
-                                do
-                                {
-                                    Print.Text("input:\t\t");
-                                    input = Console.ReadLine();
-                                    numberIsFound = double.TryParse(input, out number);
-
-                                    if (input == "=")
-                                    {
-                                        Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                        break;
-                                    }
-                                }
-                                while (!numberIsFound);
-
-                                result = number;
-                            }
-
-                            else Print.Text($"\t\t{result}\n", ConsoleColor.Green);
-
-                            while (input != "=")
-                            {
-                                Print.Text("+  -  *  /\t", ConsoleColor.DarkYellow);
-                                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                input = Console.ReadLine();
-                                Console.ResetColor();
-
-                                if (input == "+" || input == "-" || input == "*" || input == "/")
-                                    PerformOperation(input);
-
-                                else if (input == "=")
-                                    Print.Text($"\nresult:\t\t{result}\n", ConsoleColor.Green);
-
-                                else
-                                    Print.Text("unknown operator\a".PadLeft(33, ' ') + "\n", ConsoleColor.Red);
-                            }
-
-                            do
-                            {
-                                Print.Text("\nContinue using the calculator?");
-                                Print.Text(" [y] ", ConsoleColor.Green);
-                                Print.Text("/");
-                                Print.Text(" [n] ", ConsoleColor.Green);
-                                Print.Text(": ");
-
-                                Console.ForegroundColor = ConsoleColor.Green;
-                                input = Console.ReadLine();
-                                Console.ResetColor();
-
-                                if (input.ToLower() != "y" && input.ToLower() != "n")
-                                {
-                                    Print.Text("y - continue\a".PadLeft(56, ' ') + "\n", ConsoleColor.Red);
-                                    Print.Text("n - exit\a".PadLeft(52, ' '), ConsoleColor.Red);
-                                    continue;
-                                }
-                            }
-                            while (input.ToLower() != "y" && input.ToLower() != "n");
-
-                            if (input.ToLower() == "y")
-                            {
-                                do
-                                {
-                                    Print.Text("\nSave current result as starting number?");
-                                    Print.Text(" [y] ", ConsoleColor.Green);
-                                    Print.Text("/");
-                                    Print.Text(" [n] ", ConsoleColor.Green);
-                                    Print.Text(": ");
-
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    input = Console.ReadLine();
-                                    Console.ResetColor();
-
-                                    if (input.ToLower() != "y" && input.ToLower() != "n")
-                                    {
-                                        Print.Text($"\t\t\t\t\t\t    y - start from {result}\a\n", ConsoleColor.Red);
-                                        Print.Text("n - start from 0\a".PadLeft(69, ' '), ConsoleColor.Red);
-                                        continue;
-                                    }
-                                }
-                                while (input.ToLower() != "y" && input.ToLower() != "n");
-
-                                if (input.ToLower() == "y") continue;
-
-                                if (input.ToLower() == "n")
-                                {
-                                    result = 0;
-                                    continue;
-                                }
-                            }
-
-                            if (input.ToLower() == "n") break;
-                        }
-
-                        void PerformOperation(string mathOperator)
-                        {
-                            do
-                            {
-                                Print.Text("input:\t\t");
-                                input = Console.ReadLine();
-                                numberIsFound = double.TryParse(input, out number);
-
-                                if (input == "=")
-                                {
-                                    Print.Text("\ninput interrupted\n", ConsoleColor.Blue);
-                                    Print.Text($"result:\t\t{result}\n", ConsoleColor.Green);
-                                    break;
-                                }
-
-                                else
-                                {
-                                    if (mathOperator == "+") result += number;
-                                    if (mathOperator == "-") result -= number;
-                                    if (mathOperator == "*") result *= number;
-                                    if (mathOperator == "/")
-                                    {
-                                        if (number == 0)
-                                            Print.Text("division by zero is not possible\a".PadLeft(49, ' ') + "\n", ConsoleColor.Red);
-
-                                        else result /= number;
-                                    }
-                                        
-                                }
-                            }
-                            while (!numberIsFound || number == 0 && mathOperator == "/");
-                        }
-                    }
+                    if (menuChoice == 1) Calculator.Use();
 
                     //square
                     else if (menuChoice == 2)

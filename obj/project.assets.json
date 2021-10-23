@@ -15,9 +15,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\codeBase\\c#\\MyCalc\\Calculator.csproj",
-      "projectName": "Calculator",
-      "projectPath": "D:\\codeBase\\c#\\MyCalc\\Calculator.csproj",
+      "projectUniqueName": "D:\\codeBase\\c#\\MyCalc\\MyCalc.csproj",
+      "projectName": "MyCalc",
+      "projectPath": "D:\\codeBase\\c#\\MyCalc\\MyCalc.csproj",
       "packagesPath": "C:\\Users\\Oleg\\.nuget\\packages\\",
       "outputPath": "D:\\codeBase\\c#\\MyCalc\\obj\\",
       "projectStyle": "PackageReference",

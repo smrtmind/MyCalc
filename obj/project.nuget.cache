@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hd7Z5JLSGkCZX8hLS1FpEbCPcTOmWxF7lQtq+zZDgaX86ioEXSb8R9BwuVPEkL4R0931kj6HSsBtv8RTQTMqMQ==",
+  "dgSpecHash": "c825NplA9lX1rHj/9Fe/Y4qOo4W/ieKarRoHeff91bUyS+Cj+aj1LEqkfQiHdCGD27pf6oS07ublnLLUqub1vg==",
   "success": true,
-  "projectFilePath": "D:\\codeBase\\c#\\MyCalc\\Calculator.csproj",
+  "projectFilePath": "D:\\codeBase\\c#\\MyCalc\\MyCalc.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
