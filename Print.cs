@@ -107,8 +107,10 @@ namespace MyCalc
             Thread.Sleep(1000);
         }
 
-        public static void Text(string text, ConsoleColor color = ConsoleColor.White)
+        public static void Text(string text, ConsoleColor color = ConsoleColor.White, bool consoleClear = false)
         {
+            if (consoleClear) Console.Clear();
+
             Console.ForegroundColor = color;
             Console.Write(text);
             Console.ResetColor();

@@ -2,9 +2,9 @@
 
 namespace MyCalc
 {
-    public class Function
+    public class Number
     {
-        public static double GetNumber()
+        public static double Get()
         {
             string keyboardInput = string.Empty;
             double number;
@@ -36,12 +36,6 @@ namespace MyCalc
             Console.SetCursorPosition(0, Console.CursorTop);
             Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(0, Console.CursorTop - 1);
-        }
-
-        public static void PrintTitle(string title)
-        {
-            Console.Clear();
-            Print.Text(title, ConsoleColor.Cyan);
         }
     }
 }
