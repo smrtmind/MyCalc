@@ -4,7 +4,7 @@ namespace MyCalc
 {
     public class Number
     {
-        public static double Get()
+        public static double Get(string text = "input:\t\t")
         {
             string keyboardInput = string.Empty;
             double number;
@@ -12,7 +12,7 @@ namespace MyCalc
 
             do
             {
-                Print.Text("input:\t\t");
+                Print.Text($"{text}");
                 keyboardInput = Console.ReadLine();
                 numberIsFound = double.TryParse(keyboardInput, out number);
 

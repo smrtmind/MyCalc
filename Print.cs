@@ -32,15 +32,15 @@ namespace MyCalc
 
             Text("[5]".PadLeft(19, ' '), ConsoleColor.Green);
             Console.OutputEncoding = Encoding.GetEncoding(65001);
-            Text("  \u00B2√");
+            Text("  \u00B2√x");
 
-            Text("[6]".PadLeft(12, ' '), ConsoleColor.Green);
+            Text("[6]".PadLeft(11, ' '), ConsoleColor.Green);
             Console.OutputEncoding = Encoding.GetEncoding(65001);
-            Text("  \u00B3√");
+            Text("  \u00B3√x");
 
-            Text("[7]".PadLeft(12, ' '), ConsoleColor.Green);
-            Text("  %");
-            Text(" >>>\n\n", ConsoleColor.Green);
+            Text("[7]".PadLeft(11, ' '), ConsoleColor.Green);
+            Console.OutputEncoding = Encoding.GetEncoding(65001);
+            Text("  ʸ√x\n\n");
 
             Text("[8]".PadLeft(19, ' '), ConsoleColor.Green);
             Text("  sin");
@@ -58,9 +58,13 @@ namespace MyCalc
             Text(" cosh");
 
             Text("[13]".PadLeft(11, ' '), ConsoleColor.Green);
-            Text(" tanh");
+            Text(" tanh\n\n");
 
-            Text("\n\n\t\tmake your choice: ");
+            Text("[14]".PadLeft(20, ' '), ConsoleColor.Green);
+            Text(" %");
+            Text(" >>>\n\n", ConsoleColor.Green);
+
+            Text("\t\tmake your choice: ");
         }
 
         public static void PercentageOptions()

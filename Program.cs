@@ -43,7 +43,7 @@ namespace MyCalc
                     else if (menuChoice == 4)
                     {
                         Print.Text("\traise a number to a power\n\n", ConsoleColor.Cyan, consoleClear: true);
-                        Print.Text($"\nresult:\t\t{Math.Pow(Number.Get(), Number.Get())}\n", ConsoleColor.Green);
+                        Print.Text($"\nresult:\t\t{Math.Pow(Number.Get(), Number.Get("power:\t\t"))}\n", ConsoleColor.Green);
                     }
 
                     //square root
@@ -60,23 +60,11 @@ namespace MyCalc
                         Print.Text($"\nresult:\t\t{Math.Cbrt(Number.Get())}\n", ConsoleColor.Green);
                     }
 
-                    //percentage
+                    //root to a power
                     else if (menuChoice == 7)
                     {
-                        do
-                        {
-                            //print starting options
-                            Print.PercentageOptions();
-
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            input = Console.ReadLine();
-                            byte.TryParse(input, out menuChoice);
-                            Console.ResetColor();
-
-                            if (input.ToLower() == "<") break;
-                            else Percentage.Use(menuChoice);
-                        }
-                        while (menuChoice <= 0 || menuChoice > 4);
+                        Print.Text("\tN root of a number\n\n", ConsoleColor.Cyan, consoleClear: true);
+                        Print.Text($"\nresult:\t\t{Math.Pow(Number.Get(), 1 / Number.Get("power:\t\t"))}\n", ConsoleColor.Green);
                     }
 
                     //sine
@@ -121,9 +109,28 @@ namespace MyCalc
                         Print.Text($"\nresult:\t\t{Math.Tanh(Number.Get())}\n", ConsoleColor.Green);
                     }
 
+                    //percentage
+                    else if (menuChoice == 14)
+                    {
+                        do
+                        {
+                            //print starting options
+                            Print.PercentageOptions();
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            input = Console.ReadLine();
+                            byte.TryParse(input, out menuChoice);
+                            Console.ResetColor();
+
+                            if (input.ToLower() == "<") break;
+                            else Percentage.Use(menuChoice);
+                        }
+                        while (menuChoice <= 0 || menuChoice > 4);
+                    }
+
                     else if (input.ToLower() == "<") break;
                 }
-                while (menuChoice <= 0 || menuChoice > 13);
+                while (menuChoice <= 0 || menuChoice > 14);
                 
                 //stop the program and exit
                 if (input.ToLower() == "<")
