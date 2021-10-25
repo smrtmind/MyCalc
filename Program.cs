@@ -12,7 +12,7 @@ namespace MyCalc
             {
                 byte menuChoice;
                 double result = 0;
-                double number, number1, percent, power;
+                double number, number1, percent;
 
                 do
                 {
@@ -30,47 +30,36 @@ namespace MyCalc
                     //square
                     else if (menuChoice == 2)
                     {
-                        Console.Clear();
-                        Print.Text("\tsquare of a number\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Pow(number, 2)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tsquare of a number\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Pow(Function.GetNumber(), 2)}\n", ConsoleColor.Green);
                     }
 
                     //cube
                     else if (menuChoice == 3)
                     {
-                        Console.Clear();
-                        Print.Text("\tcube of a number\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Pow(number, 3)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tcube of a number\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Pow(Function.GetNumber(), 3)}\n", ConsoleColor.Green);
                     }
 
                     //number to a power
                     else if (menuChoice == 4)
                     {
-                        Console.Clear();
-                        Print.Text("\traise a number to a power\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        power = GetNumber("power:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Pow(number, power)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\traise a number to a power\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Pow(Function.GetNumber(), Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     //square root
                     else if (menuChoice == 5)
                     {
-                        Console.Clear();
-                        Print.Text("\tsquare root of a number\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Sqrt(number)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tsquare root of a number\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Sqrt(Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     //cube root
                     else if (menuChoice == 6)
                     {
-                        Console.Clear();
-                        Print.Text("\tcube root of a number\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Cbrt(number)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tcube root of a number\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Cbrt(Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     //percentage
@@ -88,48 +77,48 @@ namespace MyCalc
 
                             if (input.ToLower() == "<") break;
 
-                            switch (menuChoice)
-                            {
-                                case 1:
-                                    Console.Clear();
-                                    Print.Text("\twhat is ... % of number ...\n\n", ConsoleColor.Cyan);
-                                    percent = GetNumber("input %:\t");
-                                    number = GetNumber("input number:\t");
+                            //switch (menuChoice)
+                            //{
+                            //    case 1:
+                            //        Console.Clear();
+                            //        Print.Text("\twhat is ... % of number ...\n\n", ConsoleColor.Cyan);
+                            //        percent = GetNumber("input %:\t");
+                            //        number = GetNumber("input number:\t");
 
-                                    result = (number / 100) * percent;
-                                    Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
-                                    break;
+                            //        result = (number / 100) * percent;
+                            //        Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
+                            //        break;
 
-                                case 2:
-                                    Console.Clear();
-                                    Print.Text("\twhat % is number ... of number ...\n\n", ConsoleColor.Cyan);
-                                    number = GetNumber("input number1:\t");
-                                    number1 = GetNumber("input number2:\t");
+                            //    case 2:
+                            //        Console.Clear();
+                            //        Print.Text("\twhat % is number ... of number ...\n\n", ConsoleColor.Cyan);
+                            //        number = GetNumber("input number1:\t");
+                            //        number1 = GetNumber("input number2:\t");
 
-                                    result = 100 / (number1 / number);
-                                    Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
-                                    break;
+                            //        result = 100 / (number1 / number);
+                            //        Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
+                            //        break;
 
-                                case 3:
-                                    Console.Clear();
-                                    Print.Text("\tadd ... % to the number ...\n\n", ConsoleColor.Cyan);
-                                    percent = GetNumber("input %:\t");
-                                    number = GetNumber("input number:\t");
+                            //    case 3:
+                            //        Console.Clear();
+                            //        Print.Text("\tadd ... % to the number ...\n\n", ConsoleColor.Cyan);
+                            //        percent = GetNumber("input %:\t");
+                            //        number = GetNumber("input number:\t");
 
-                                    result = ((number / 100) * percent) + number;
-                                    Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
-                                    break;
+                            //        result = ((number / 100) * percent) + number;
+                            //        Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
+                            //        break;
 
-                                case 4:
-                                    Console.Clear();
-                                    Print.Text("\tsubtract ... % from the number ...\n\n", ConsoleColor.Cyan);
-                                    percent = GetNumber("input %:\t");
-                                    number = GetNumber("input number:\t");
+                            //    case 4:
+                            //        Console.Clear();
+                            //        Print.Text("\tsubtract ... % from the number ...\n\n", ConsoleColor.Cyan);
+                            //        percent = GetNumber("input %:\t");
+                            //        number = GetNumber("input number:\t");
 
-                                    result = number - ((number / 100) * percent);
-                                    Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
-                                    break;
-                            }
+                            //        result = number - ((number / 100) * percent);
+                            //        Print.Text($"\nresult:\t\t{Math.Round(result, 2)}\n", ConsoleColor.Green);
+                            //        break;
+                            //}
                         }
                         while (menuChoice <= 0 || menuChoice > 4);
                     }
@@ -137,55 +126,43 @@ namespace MyCalc
                     //sine
                     else if (menuChoice == 8)
                     {
-                        Console.Clear();
-                        Print.Text("\tsine of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Sin((number) * Math.PI / 180)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tsine of an angle\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Sin((Function.GetNumber()) * Math.PI / 180)}\n", ConsoleColor.Green);
                     }
 
                     //cosine
                     else if (menuChoice == 9)
                     {
-                        Console.Clear();
-                        Print.Text("\tcosine of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Cos((number) * Math.PI / 180)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\tcosine of an angle\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Cos((Function.GetNumber()) * Math.PI / 180)}\n", ConsoleColor.Green);
                     }
 
                     //tangent
                     else if (menuChoice == 10)
                     {
-                        Console.Clear();
-                        Print.Text("\ttangent of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Tan((number) * Math.PI / 180)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\ttangent of an angle\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Tan((Function.GetNumber()) * Math.PI / 180)}\n", ConsoleColor.Green);
                     }
 
                     //sinh
                     else if (menuChoice == 11)
                     {
-                        Console.Clear();
-                        Print.Text("\thyperbolic sine of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Sinh(number)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\thyperbolic sine of an angle\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Sinh(Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     //cosh
                     else if (menuChoice == 12)
                     {
-                        Console.Clear();
-                        Print.Text("\thyperbolic cosine of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Cosh(number)}\n", ConsoleColor.Green);
+                        Function.PrintTitle("\thyperbolic cosine of an angle\n\n");
+                        Print.Text($"\nresult:\t\t{Math.Cosh(Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     //tanh
                     else if (menuChoice == 13)
                     {
-                        Console.Clear();
                         Print.Text("\thyperbolic tangent of an angle\n\n", ConsoleColor.Cyan);
-                        number = GetNumber("input:\t\t");
-                        Print.Text($"\nresult:\t\t{Math.Tanh(number)}\n", ConsoleColor.Green);
+                        Print.Text($"\nresult:\t\t{Math.Tanh(Function.GetNumber())}\n", ConsoleColor.Green);
                     }
 
                     else if (input.ToLower() == "<") break;
@@ -224,22 +201,5 @@ namespace MyCalc
                 if (input.ToLower() == "y") Print.ProgramShutDown();
             }
         }      
-        
-        internal static double GetNumber(string text)
-        {
-            string keyboardInput = string.Empty;
-            double number;
-            bool numberFound;
-
-            do
-            {
-                Print.Text(text);
-                keyboardInput = Console.ReadLine();
-                numberFound = double.TryParse(keyboardInput, out number);
-            }
-            while (!numberFound);
-
-            return number;
-        }
     }
 }
