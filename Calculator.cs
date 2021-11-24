@@ -43,7 +43,11 @@ namespace MyCalc
 
                 do
                 {
-                    Question("\nContinue using the calculator?");
+                    Print.Question("\nContinue using the calculator?");
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    input = Console.ReadLine().ToLower();
+                    Console.ResetColor();
 
                     if (input != "y" && input != "n")
                     {
@@ -57,7 +61,11 @@ namespace MyCalc
                 {
                     do
                     {
-                        Question("\nSave current result as starting number?");
+                        Print.Question("\nSave current result as starting number?");
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        input = Console.ReadLine().ToLower();
+                        Console.ResetColor();
 
                         if (input != "y" && input != "n")
                         {
@@ -118,19 +126,6 @@ namespace MyCalc
                 }
             }
             while (!numberIsFound);
-        }
-
-        private static void Question(string text)
-        {
-            Print.Text(text);
-            Print.Text(" [y] ", ConsoleColor.Green);
-            Print.Text("/");
-            Print.Text(" [n] ", ConsoleColor.Green);
-            Print.Text(": ");
-
-            Console.ForegroundColor = ConsoleColor.Green;
-            input = Console.ReadLine().ToLower();
-            Console.ResetColor();
         }
 
         private static void ClearLine()

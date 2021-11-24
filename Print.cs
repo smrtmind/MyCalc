@@ -119,5 +119,13 @@ namespace MyCalc
             Console.Write(text);
             Console.ResetColor();
         }
+        public static void Question(string text)
+        {
+            Text(text);
+            Text(" [y] ", ConsoleColor.Green);
+            Text("/");
+            Text(" [n] ", ConsoleColor.Green);
+            Text(": ");
+        }
     }
 }

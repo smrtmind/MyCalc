@@ -8,7 +8,7 @@ namespace MyCalc
         {
             string input = string.Empty;
 
-            while (input.ToLower() != "y")
+            while (input != "y")
             {
                 byte menuChoice;
 
@@ -18,7 +18,7 @@ namespace MyCalc
                     Print.MainMenuOptions();
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    input = Console.ReadLine();
+                    input = Console.ReadLine().ToLower();
                     byte.TryParse(input, out menuChoice);
                     Console.ResetColor();
 
@@ -118,22 +118,22 @@ namespace MyCalc
                             Print.PercentageOptions();
 
                             Console.ForegroundColor = ConsoleColor.Green;
-                            input = Console.ReadLine();
+                            input = Console.ReadLine().ToLower();
                             byte.TryParse(input, out menuChoice);
                             Console.ResetColor();
 
-                            if (input.ToLower() == "<") break;
+                            if (input == "<") break;
                             else Percentage.Use(menuChoice);
                         }
                         while (menuChoice <= 0 || menuChoice > 4);
                     }
 
-                    else if (input.ToLower() == "<") break;
+                    else if (input == "<") break;
                 }
                 while (menuChoice <= 0 || menuChoice > 14);
                 
                 //stop the program and exit
-                if (input.ToLower() == "<")
+                if (input == "<")
                 {
                     //print the animation
                     Print.ProgramShutDown();
@@ -142,26 +142,22 @@ namespace MyCalc
 
                 do
                 {
-                    Print.Text("\nExit the program?");
-                    Print.Text(" [y] ", ConsoleColor.Green);
-                    Print.Text("/");
-                    Print.Text(" [n] ", ConsoleColor.Green);
-                    Print.Text(": ");
+                    Print.Question("\nExit the program?");
 
                     Console.ForegroundColor = ConsoleColor.Green;
-                    input = Console.ReadLine();
+                    input = Console.ReadLine().ToLower();
                     Console.ResetColor();
 
-                    if (input.ToLower() != "y" && input.ToLower() != "n")
+                    if (input != "y" && input != "n")
                     {
                         Print.Text("y - exit\a".PadLeft(39, ' ') + "\n", ConsoleColor.Red);
                         Print.Text("n - return to main menu\a".PadLeft(54, ' '), ConsoleColor.Red);
                         continue;
                     }
                 }
-                while (input.ToLower() != "y" && input.ToLower() != "n");
+                while (input != "y" && input != "n");
 
-                if (input.ToLower() == "y") Print.ProgramShutDown();
+                if (input == "y") Print.ProgramShutDown();
             }
         }      
     }
