@@ -11,6 +11,8 @@ namespace MyCalc
 
         public static void Use()
         {
+            result = default;
+
             while (true)
             {
                 Console.Clear();

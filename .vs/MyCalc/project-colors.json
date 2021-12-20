@@ -20,7 +20,17 @@
       "ProjectGuid": "b1ab084c-d43b-4ca3-be3b-1eb1965fe12d",
       "DisplayName": "MyCalc",
       "ColorIndex": 3
+    },
+    "f96a02c9-016f-40e4-a5d7-8182ac85bc57": {
+      "ProjectGuid": "f96a02c9-016f-40e4-a5d7-8182ac85bc57",
+      "DisplayName": "MyCalc",
+      "ColorIndex": 4
+    },
+    "027a8d42-eec8-450d-9a2a-e1cbb0eacc39": {
+      "ProjectGuid": "027a8d42-eec8-450d-9a2a-e1cbb0eacc39",
+      "DisplayName": "MyCalc",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }
